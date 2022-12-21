@@ -8,8 +8,9 @@ export const HeaderComponent = styled.header`
   justify-content: center;
   flex-direction: column;
 
-  img {
+  svg {
     width: 6rem;
+    color: ${props => props.theme.colors.baseText};
   }
 
   span.title {

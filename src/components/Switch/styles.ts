@@ -9,6 +9,15 @@ export const FormElement = styled.form`
   all: unset;
 }
 
+div {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: 0.5rem;
+  }
+}
+
 .SwitchRoot {
   width: 42px;
   height: 25px;
@@ -41,7 +50,7 @@ export const FormElement = styled.form`
 }
 
 .Label {
-  color: white;
+  color: ${props => props.theme.colors.baseText};
   font-size: 15px;
   line-height: 1;
   user-select: none;
