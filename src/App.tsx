@@ -1,12 +1,15 @@
-import { useState } from 'react'
-import Calendar from 'react-calendar'
-import 'react-calendar/dist/Calendar.css';
+import { ThemeProvider } from 'styled-components'
+import { Header } from './components/Header'
+import { GlobalStyle } from './styles/globalstyle'
+import dark from './styles/themes/Dark'
 
 export function App() {
-  const [value, setValue] = useState(new Date())
-
+  
   return (
-    <Calendar onChange={setValue} value={value} />
+    <ThemeProvider theme={dark}>
+      <Header />
+      <GlobalStyle />
+    </ThemeProvider>
   )
 }
 
