@@ -2,7 +2,7 @@ export function Logo() {
   
   return (
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
-	    width="100%" viewBox="0 0 399 434" enable-background="new 0 0 399 434">
+	    width="100%" viewBox="0 0 399 434">
   <path fill="none" opacity="1.000000" stroke="none" 
     d="
   M268.000000,435.000000 
