@@ -12,4 +12,10 @@ export const GlobalStyle = createGlobalStyle`
     background: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.baseText};
   }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 `

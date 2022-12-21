@@ -6,6 +6,7 @@ export default {
 
     green: '#468848',
     red: '#A23A3A',
+    yellow: '#C5A34A',
     blue: '#5189A1'
   },
 }

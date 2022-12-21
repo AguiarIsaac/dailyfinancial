@@ -1,5 +1,15 @@
+import logo from "../../assets/svg/hashira.svg";
+import { SwitchElement } from "../Switch";
+import { HeaderComponent } from "./styles";
+
 export function Header() {
+
   return (
-    <header><h1>header</h1></header>
+    <HeaderComponent>
+      <img src={logo} alt="Logo" />
+      <span className="title">Hashira</span>
+
+      <SwitchElement />
+    </HeaderComponent>
   )
 }
