@@ -20,7 +20,7 @@ div {
 
 .SwitchRoot {
   width: 42px;
-  height: 25px;
+  height: 18px;
   background-color: #777;
   border-radius: 9999px;
   position: relative;
@@ -37,7 +37,7 @@ div {
 .SwitchThumb {
   display: block;
   width: 21px;
-  height: 21px;
+  height: 14px;
   background-color: white;
   border-radius: 9999px;
   box-shadow: 0 2px 2px #777;

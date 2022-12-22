@@ -12,5 +12,7 @@ declare module 'styled-components' {
       yellow: string,
       blue: string
     },
+
+    backgroundImg: string
   }
 }

@@ -1,12 +1,10 @@
-import logo from "../../assets/svg/hashira.svg";
-import { Logo } from "../Logo";
 import { HeaderComponent } from "./styles";
 
 export function Header() {
 
   return (
     <HeaderComponent>
-      <Logo />
+      <div className="logoContainer"></div>
       <span className="title">Hashira</span>
     </HeaderComponent>
   )

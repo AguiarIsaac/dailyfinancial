@@ -1,3 +1,5 @@
+import logo from "../../assets/images/hashira-dark.png"
+
 export default {
   colors: {
     background: '#FFFFFF',
@@ -9,4 +11,6 @@ export default {
     yellow: '#C5A34A',
     blue: '#5189A1'
   },
+
+  backgroundImg: logo
 }

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import logo from "../../assets/images/hashira-ligth.png";
 
 export const HeaderComponent = styled.header`
   max-width: 1400px;
@@ -7,10 +8,13 @@ export const HeaderComponent = styled.header`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 0 auto;
 
-  svg {
+  div.logoContainer {
     width: 6rem;
-    color: ${props => props.theme.colors.baseText};
+    height: 6rem;
+    background: url(${props => props.theme.backgroundImg}) center center no-repeat;
+    background-size: cover;
   }
 
   span.title {
