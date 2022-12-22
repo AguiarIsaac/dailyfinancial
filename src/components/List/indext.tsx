@@ -1,4 +1,3 @@
-import { ArrowCircleUp } from "phosphor-react";
 import { Transaction } from "./components/Transaction";
 import { ListTransactions, SectionList } from "./styles";
 
