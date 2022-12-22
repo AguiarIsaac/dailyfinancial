@@ -20,7 +20,7 @@ export function SwitchElement({setChangeTheme, changeTheme}: SwitchProps) {
   return (
       <FormElement>
       <div>
-        {changeTheme ? <Moon />: <Sun color='#C5A34A'/>}
+        {changeTheme ? <Moon size={18}/>: <Sun color='#C5A34A' size={18}/>}
         <label className="Label" htmlFor="airplane-mode" style={{ paddingRight: 15 }}>
           Tema:
         </label>

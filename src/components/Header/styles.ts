@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import logo from "../../assets/images/hashira-ligth.png";
 
 export const HeaderComponent = styled.header`
   max-width: 1400px;
