@@ -3,6 +3,7 @@ import { Calendar } from 'react-calendar'
 import { ThemeProvider } from 'styled-components'
 import { Container } from './components/Container'
 import { Header } from './components/Header'
+import { List } from './components/List/indext'
 import { SwitchElement } from './components/Switch'
 import { GlobalStyle } from './styles/globalstyle'
 import Dark from './styles/themes/Dark'
@@ -18,8 +19,8 @@ export function App() {
       <Header />
 
       <Container>
-        <div className="box1"></div>
-        <div className="box2"></div>
+
+        <List />
       </Container>
       <GlobalStyle />
     </ThemeProvider>

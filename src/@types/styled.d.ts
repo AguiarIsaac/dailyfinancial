@@ -7,8 +7,13 @@ declare module 'styled-components' {
       baseText: string,
       baseCard: string,
   
+      gray5: string,
+      gray6: string,
       green: string,
+      greenLigth: string,
+      greenDark: string,
       red: string,
+      redDark:string,
       yellow: string,
       blue: string
     },

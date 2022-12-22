@@ -6,8 +6,13 @@ export default {
     baseText: '#FFFFFF',
     baseCard: '#202024',
 
-    green: '#468848',
-    red: '#A23A3A',
+    gray5: '#7C7C8A',
+    gray6: '#C4C4CC',
+    green: '#00875F',
+    greenLigth: '#00B37E',
+    greenDark: '#015F43',
+    red: '#F75A68',
+    redDark: '#AA2834',
     yellow: '#C5A34A',
     blue: '#5189A1'
   },
