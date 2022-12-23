@@ -6,6 +6,9 @@ export default {
     baseText: '#FFFFFF',
     baseCard: '#202024',
 
+    gray1: '#121214',
+    gray3: '#29292E',
+    gray4: '#323238',
     gray5: '#7C7C8A',
     gray6: '#C4C4CC',
     green: '#00875F',

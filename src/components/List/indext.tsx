@@ -1,5 +1,7 @@
 import { Transaction } from "./components/Transaction";
 import { ListTransactions, SectionList } from "./styles";
+import * as Dialog from '@radix-ui/react-dialog';
+import { NewTransactionModal } from "../NewTransactionModal";
 
 export function List() {
   return (
@@ -10,7 +12,13 @@ export function List() {
           <small>Dezembro de 2022</small>
         </div>
 
-        <button type="button">Nova transação</button>
+        <Dialog.Root>
+          <Dialog.Trigger asChild>
+            <button type="button">Nova transação</button>
+          </Dialog.Trigger>
+
+          <NewTransactionModal />
+        </Dialog.Root>
       </header>
 
       <ListTransactions>

@@ -7,6 +7,9 @@ declare module 'styled-components' {
       baseText: string,
       baseCard: string,
   
+      gray1: string,
+      gray3: string,
+      gray4: string,
       gray5: string,
       gray6: string,
       green: string,
