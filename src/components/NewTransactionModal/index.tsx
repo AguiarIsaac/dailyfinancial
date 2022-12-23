@@ -1,8 +1,18 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react'
+import { useForm, Controller } from "react-hook-form";
 import { CloseButton, Content, Item, Overlay, TransactionType } from './styles'
 
 export function NewTransactionModal() {
+  
+  const {register, handleSubmit, control, reset } = useForm()
+
+  function handleCreateNewTransaction(data: any) {
+    console.log(data)
+
+    reset()
+  }
+  
   return (
     <Dialog.Portal>
       <Overlay />
@@ -12,22 +22,31 @@ export function NewTransactionModal() {
           <X size={24} />
         </CloseButton>
 
-        <form>
-          <input type="text" placeholder='Descrição' />
-          <input type="number" placeholder='Valor' />
-          <input type="text" placeholder='Categoria' />
+        <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
+          <input {...register('description', {required: true})} type="text" placeholder='Descrição' />
+          <input {...register('value', {required: true})} type="number" placeholder='Valor' />
+          <input {...register('category', {required: true})} type="text" placeholder='Categoria' />
 
-          <TransactionType>
-            <Item value="input" id="input">
-              <ArrowCircleUp size={18}/>
-              Entrada
-            </Item>
+          <Controller 
+            control={control}
+            name="type"
+            render={( {field }) => {
+              return (
+                <TransactionType onValueChange={field.onChange} value={field.value}>
+                  <Item value="input" id="input">
+                    <ArrowCircleUp size={18}/>
+                    Entrada
+                  </Item>
 
-            <Item value="output" id="output">
-              <ArrowCircleDown size={18}/>
-              Saída  
-            </Item>
-          </TransactionType>
+                  <Item value="output" id="output">
+                    <ArrowCircleDown size={18}/>
+                    Saída  
+                  </Item>
+                </TransactionType>
+              )
+            }}
+          />
+
 
           <button type="submit">Cadastrar</button>
         </form>
