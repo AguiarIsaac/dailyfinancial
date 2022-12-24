@@ -1,14 +1,24 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react'
+import { useContext } from 'react';
 import { useForm, Controller } from "react-hook-form";
+import { TransactionsContext } from '../contexts/TransactionsContext';
 import { CloseButton, Content, Item, Overlay, TransactionType } from './styles'
 
 export function NewTransactionModal() {
   
   const {register, handleSubmit, control, reset } = useForm()
+  const TransactionContext = useContext(TransactionsContext)
 
   function handleCreateNewTransaction(data: any) {
-    console.log(data)
+    const dataformated = {
+      id: Math.floor(Date.now() * Math.random()).toString(36),
+      created_at: new Date(),
+      ...data
+    }
+
+    TransactionContext.addToList(dataformated)
+
 
     reset()
   }

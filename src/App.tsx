@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { Calendar } from 'react-calendar'
 import { ThemeProvider } from 'styled-components'
 import { Container } from './components/Container'
+import { TransactionsContextProvider } from './components/contexts/TransactionsContext'
 import { Header } from './components/Header'
 import { List } from './components/List/indext'
 import { SwitchElement } from './components/Switch'
@@ -14,16 +14,18 @@ export function App() {
   const [changeTheme, setChangeTheme] = useState(true)
 
   return (
-    <ThemeProvider theme={changeTheme ? Dark : Light}>
-      <SwitchElement setChangeTheme={setChangeTheme} changeTheme={changeTheme}/>
-      <Header />
+    <TransactionsContextProvider>
+      <ThemeProvider theme={changeTheme ? Dark : Light}>
+        <SwitchElement setChangeTheme={setChangeTheme} changeTheme={changeTheme}/>
+        <Header />
 
-      <Container>
+        <Container>
 
-        <List />
-      </Container>
-      <GlobalStyle />
-    </ThemeProvider>
+          <List />
+        </Container>
+        <GlobalStyle />
+      </ThemeProvider>
+    </TransactionsContextProvider>
   )
 }
 
