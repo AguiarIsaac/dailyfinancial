@@ -8,12 +8,11 @@ interface transactionProps {
   value: number,
   category: string,
   type: string,
-  created_at: Date
+  created_at: Date,
+  dateOfTransaction: Date
 }
 
-export function Transaction({id, description, type, value, category, created_at}: transactionProps) {
-  
-  const [operationType, setOperationType] = useState(true)
+export function Transaction({id, description, type, value, category, created_at, dateOfTransaction}: transactionProps) {
   
   function verifyTransaction() {
     if(type == 'input') {
@@ -22,6 +21,19 @@ export function Transaction({id, description, type, value, category, created_at}
       setOperationType(false)
     }
   }
+  
+  function DateFormat(date: Date) {
+    const day = new Date(date).getDay()
+    const month = new Date(date).getMonth() + 1
+    const year = new Date(date).getFullYear()
+    
+    
+    return `${day}/${month}/${year}`
+  }
+  
+  const [operationType, setOperationType] = useState(true)
+  const dateOfTransactionFormated = DateFormat(dateOfTransaction)
+  const valueFormated = new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(value)
   
   useEffect(() =>{
     verifyTransaction()
@@ -41,13 +53,13 @@ export function Transaction({id, description, type, value, category, created_at}
         <span className="tag">BH</span>
       </div> */}
 
-      {operationType && <span className="valuePositive">{value}</span>}
-      {!operationType && <span className="valueNegative">{value}</span>}
+      {operationType && <span className="valuePositive">{valueFormated}</span>}
+      {!operationType && <span className="valueNegative">{valueFormated}</span>}
       
     </div>
 
     <div className="line2">
-      <small>{created_at.getMonth()}</small>
+      <small>{dateOfTransactionFormated}</small>
     </div>
   </TransactionComponent>
   )

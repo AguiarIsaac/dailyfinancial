@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { Container } from './components/Container'
-import { TransactionsContextProvider } from './components/contexts/TransactionsContext'
+import { TransactionsContextProvider } from './contexts/TransactionsContext'
 import { Header } from './components/Header'
 import { List } from './components/List/indext'
 import { SwitchElement } from './components/Switch'

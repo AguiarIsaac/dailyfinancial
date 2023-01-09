@@ -15,7 +15,8 @@ interface TransactionProps {
   description: string,
   value: number,
   category: string,
-  type: string
+  type: string,
+  dateOfTransaction: Date
 }
 
 
@@ -41,8 +42,8 @@ export function TransactionsContextProvider({children}: ContextProps) {
   )
 }
 
-// FORMATAR DATAS
-// FORMATAR VALORES
+// FORMATAR DATAS --> OK 50% (falta numeros abaixo de 10)
+// FORMATAR VALORES --> OK 50% (falta mascara no input)
 // ADICIONAR DESCRIÇÃO
 // EDITAR REGISTRO
 // APAGAR (MOTIVO E DEIXAR SALVO EM UMA TABELA DE EXCLUIDOS)

@@ -2,7 +2,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react'
 import { useContext } from 'react';
 import { useForm, Controller } from "react-hook-form";
-import { TransactionsContext } from '../contexts/TransactionsContext';
+import { TransactionsContext } from '../../contexts/TransactionsContext';
 import { CloseButton, Content, Item, Overlay, TransactionType } from './styles'
 
 export function NewTransactionModal() {
@@ -33,9 +33,9 @@ export function NewTransactionModal() {
 
         <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
           <input {...register('description', {required: true})} type="text" placeholder='Descrição' />
-          <input {...register('value', {required: true})} type="number" placeholder='Valor' />
+          <input {...register('value', {required: true})} type="number" placeholder='Valor'/>
           <input {...register('category', {required: true})} type="text" placeholder='Categoria' />
-          <input type="date" {...register('dateOfTransaction', {required: true}) } />
+          <input {...register('dateOfTransaction', {required: true}) } type="date" />
 
           <Controller 
             control={control}
