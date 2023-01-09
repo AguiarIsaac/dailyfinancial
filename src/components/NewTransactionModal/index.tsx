@@ -11,6 +11,7 @@ export function NewTransactionModal() {
   const TransactionContext = useContext(TransactionsContext)
 
   function handleCreateNewTransaction(data: any) {
+    console.log(data)
     const dataformated = {
       id: Math.floor(Date.now() * Math.random()).toString(36),
       created_at: new Date(),
@@ -18,8 +19,6 @@ export function NewTransactionModal() {
     }
 
     TransactionContext.addToList(dataformated)
-
-
     reset()
   }
   
@@ -36,6 +35,7 @@ export function NewTransactionModal() {
           <input {...register('description', {required: true})} type="text" placeholder='Descrição' />
           <input {...register('value', {required: true})} type="number" placeholder='Valor' />
           <input {...register('category', {required: true})} type="text" placeholder='Categoria' />
+          <input type="date" {...register('dateOfTransaction', {required: true}) } />
 
           <Controller 
             control={control}
