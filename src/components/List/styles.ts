@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SectionList = styled.section`
   width: 24rem;
   height: 40rem;
-  padding: 1rem;
+  padding: 1rem; 
 
   background: ${props => props.theme.colors.baseCard};
   border-radius: 6px;
