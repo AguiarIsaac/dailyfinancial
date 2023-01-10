@@ -30,6 +30,14 @@ export const TransactionComponent = styled.div`
       color: ${props => props.theme.colors.red}
     }
 
+    span.valueDividends {
+      color: ${props => props.theme.colors.blue}
+    }
+
+    span.valueAports {
+      color: ${props => props.theme.colors.yellow}
+    }
+
     /* div.tags {
       width: 8rem;
       display: flex;

@@ -96,6 +96,14 @@ export const Item = styled(RadioGroup.Item)`
     color: ${props => props.theme.colors.red};
   }
 
+  &#dividends svg {
+    color: ${props => props.theme.colors.blue};
+  }
+
+  &#aports svg {
+    color: ${props => props.theme.colors.yellow};
+  }
+
   background: ${props => props.theme.colors.gray3};
   color: ${props => props.theme.colors.gray6};
 
@@ -117,6 +125,22 @@ export const Item = styled(RadioGroup.Item)`
     background: ${props => props.theme.colors.red};
     svg {
       color: ${props => props.theme.colors.baseText};
+    }
+  }
+
+  &[data-state='checked']#dividends {
+    color: ${props => props.theme.colors.baseText};
+    background: ${props => props.theme.colors.blue};
+    svg {
+      color: ${props => props.theme.colors.baseText};
+    }
+  }
+
+  &[data-state='checked']#aports {
+    color: ${props => props.theme.colors.gray4};
+    background: ${props => props.theme.colors.yellow};
+    svg {
+      color: ${props => props.theme.colors.gray4};
     }
   }
 `

@@ -8,6 +8,7 @@ import { SwitchElement } from './components/Switch'
 import { GlobalStyle } from './styles/globalstyle'
 import Dark from './styles/themes/Dark'
 import Light from './styles/themes/Light'
+import { Status } from './components/Status/Index'
 
 export function App() {
 
@@ -20,7 +21,7 @@ export function App() {
         <Header />
 
         <Container>
-
+          <Status />
           <List />
         </Container>
         <GlobalStyle />

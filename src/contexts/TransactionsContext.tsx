@@ -42,8 +42,8 @@ export function TransactionsContextProvider({children}: ContextProps) {
   )
 }
 
-// FORMATAR DATAS --> OK 50% (falta numeros abaixo de 10)
-// FORMATAR VALORES --> OK 50% (falta mascara no input)
+// FORMATAR DATAS --> OK
+// FORMATAR VALORES --> OK 
 // ADICIONAR DESCRIÇÃO
 // EDITAR REGISTRO
 // APAGAR (MOTIVO E DEIXAR SALVO EM UMA TABELA DE EXCLUIDOS)

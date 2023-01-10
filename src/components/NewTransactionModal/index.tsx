@@ -1,5 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog'
-import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react'
+import { ArrowCircleDown, ArrowCircleUp, Bank, CurrencyCircleDollar, X } from 'phosphor-react'
 import { useContext } from 'react';
 import { useForm, Controller } from "react-hook-form";
 import { TransactionsContext } from '../../contexts/TransactionsContext';
@@ -51,6 +51,16 @@ export function NewTransactionModal() {
                   <Item value="output" id="output">
                     <ArrowCircleDown size={18}/>
                     Saída  
+                  </Item>
+
+                  <Item value='dividends' id='dividends'>
+                    <CurrencyCircleDollar size={18} />
+                    Dividendos
+                  </Item>
+
+                  <Item value='aports' id='aports'>
+                    <Bank size={18} />
+                    Aporte
                   </Item>
                 </TransactionType>
               )
