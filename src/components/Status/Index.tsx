@@ -1,21 +1,39 @@
 import { SectionStatus } from "./styles";
 import { Chart } from "react-google-charts";
+import { useContext } from "react";
+import { TransactionsContext } from "../../contexts/TransactionsContext";
 
 export function Status() {
+  const TransactionContext = useContext(TransactionsContext)
+  const listTransactions = TransactionContext.listTransactions
+
+  const transactionCount = {
+    input: listTransactions.filter(item => item.type == 'input').length,
+    output: listTransactions.filter(item => item.type == 'output').length,
+    dividends: listTransactions.filter(item => item.type == 'dividends').length,
+    aports: listTransactions.filter(item => item.type == 'aports').length
+  }
 
   const data = [
-    ["Task", "Hours per Day"],
-    ["Work", 11],
-    ["Eat", 2],
-    ["Commute", 2],
-    ["Watch TV", 2],
-    ["Sleep", 7], // CSS-style declaration
+    ["Task", "monthly transactions"],
+    ["Entradas", transactionCount.input],
+    ["Saídas", transactionCount.output],
+    ["Aportes", transactionCount.aports],
+    ["Dividendos", transactionCount.dividends], // CSS-style declaration
   ];
   
   const options = {
     title: "Balanço Mensal",
     pieHole: 0.4,
-    is3D: false,
+    is3D: true,
+    backgroundColor: 'transparent',
+    legendTextStyle: {
+      color: '#FFFFFF'
+    },
+    titleTextStyle: {
+      color: '#FFFFFF'
+    },
+    colors:  ['#00875F', '#F75A68', '#5189A1', '#C5A34A'],
   };
 
 
