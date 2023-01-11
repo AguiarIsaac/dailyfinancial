@@ -2,10 +2,12 @@ import { ChartComponent, SectionStatus, StatusContent } from "./styles";
 import { Chart } from "react-google-charts";
 import { useContext } from "react";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
+import { SmileyWink, SmileyXEyes } from "phosphor-react";
 
 export function Status() {
   const TransactionContext = useContext(TransactionsContext)
   const listTransactions = TransactionContext.listTransactions
+  console.log(listTransactions)
 
   const transactionCount = {
     input: listTransactions.filter(item => item.type == 'input').length,
@@ -59,23 +61,30 @@ export function Status() {
           </form>
         </div>
         
-        <ChartComponent chartType="PieChart" data={data} options={options} />
+        {listTransactions.length > 0 && <ChartComponent chartType="PieChart" data={data} options={options} /> }  
+         
+        {listTransactions.length === 0 && 
+          <div className="notFoundItems">
+            <SmileyXEyes size={42} />
+            <small>Não foram encontradas Transações. <br />Experimente adicionar uma nova transação!</small>
+          </div>
+        }
 
         <div className="analitcs">
           <div className="line">
-            <p>Entradas: R$ 2.080,00;</p>
+            <p>Entradas: ;</p>
           </div>
 
           <div className="line">
-            <p>Saídas: R$ 1.080,00;</p>
+            <p>Saídas: ;</p>
           </div>
 
           <div className="line">
-            <p>Aportes: R$ 280,00;</p>
+            <p>Aportes:;</p>
           </div>
 
           <div className="line">
-            <p>Dividendos: R$ 0,90.</p>
+            <p>Dividendos: .</p>
           </div>
         </div>
       </StatusContent>

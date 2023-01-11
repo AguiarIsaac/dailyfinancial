@@ -81,6 +81,17 @@ export const StatusContent = styled.div`
     justify-content: center;
     gap: 0.5rem;
   }
+
+  .notFoundItems {
+    display: flex;
+    width: 100%;
+    height: 20rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+  }
 `
 
 
