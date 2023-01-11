@@ -1,4 +1,4 @@
-import { SectionStatus } from "./styles";
+import { ChartComponent, SectionStatus, StatusContent } from "./styles";
 import { Chart } from "react-google-charts";
 import { useContext } from "react";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
@@ -33,7 +33,7 @@ export function Status() {
     titleTextStyle: {
       color: '#FFFFFF'
     },
-    colors:  ['#00875F', '#F75A68', '#5189A1', '#C5A34A'],
+    colors:  ['#00875F', '#F75A68', '#C5A34A', '#5189A1'],
   };
 
 
@@ -43,44 +43,39 @@ export function Status() {
       <h1>Status financeiro</h1>
       </header>
 
-      <div className="content">
-        <h2>Mês atual: Janeiro</h2>
+      <StatusContent>
+        <div className="formContent">
+          <h2>Mês atual: Janeiro</h2>
 
-        <form>
-          <h3>Selecionar Periodo: </h3>
-          <input type="month" name="" id="" />
-          <button type="submit">Buscar</button>
-        </form>
+          <form>
+            <h3>Selecionar Periodo: </h3>
+            <div className="formInput">
+              <input type="month"/>
+              <button type="submit">Buscar</button>
+            </div>
+          </form>
+        </div>
+        
+        <ChartComponent chartType="PieChart" data={data} options={options} />
 
         <div className="analitcs">
           <div className="line">
-            <p>Entradas: R$ 2.080,00</p>
+            <p>Entradas: R$ 2.080,00;</p>
           </div>
 
           <div className="line">
-            <p>Saídas: R$ 1.080,00</p>
+            <p>Saídas: R$ 1.080,00;</p>
           </div>
 
           <div className="line">
-            <p>Aportes: R$ 280,00.</p>
+            <p>Aportes: R$ 280,00;</p>
           </div>
 
           <div className="line">
             <p>Dividendos: R$ 0,90.</p>
           </div>
-
         </div>
-        
-        <div className="grafic">
-        <Chart
-          chartType="PieChart"
-          width="100%"
-          height="400px"
-          data={data}
-          options={options}
-        />
-        </div>
-      </div>
+      </StatusContent>
     </SectionStatus>
   )
 }
