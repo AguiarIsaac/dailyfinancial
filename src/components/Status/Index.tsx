@@ -28,10 +28,13 @@ export function Status() {
     is3D: true,
     backgroundColor: 'transparent',
     legendTextStyle: {
-      color: '#FFFFFF'
+      color: '#C4C4CC',
+      fontName: 'Roboto'
     },
     titleTextStyle: {
-      color: '#FFFFFF'
+      color: '#C4C4CC',
+      fontName: 'Roboto',
+      fontSize: 16
     },
     colors:  ['#00875F', '#F75A68', '#C5A34A', '#5189A1'],
   };

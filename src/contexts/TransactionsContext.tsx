@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 
 interface ContextProps {
   children: ReactNode
@@ -34,6 +34,26 @@ export function TransactionsContextProvider({children}: ContextProps) {
     }
     console.log(listTransactions)
   }
+
+  useEffect(() => {
+    if(listTransactions.length > 0) {
+      const stateJSON = JSON.stringify(listTransactions)
+      localStorage.setItem('@daily-financial: list-transaction-0.0.1', stateJSON)
+    }
+  },[listTransactions])
+
+  useEffect(() => {
+    const getLocalStorage = localStorage.getItem('@daily-financial: list-transaction-0.0.1')
+    if(!getLocalStorage) {
+      return
+    }
+
+    const convertList = JSON.parse(getLocalStorage)
+
+    if(listTransactions.length === 0 && convertList) {
+      setListTransactions(convertList)
+    }
+  },[])
 
   return (
     <TransactionsContext.Provider value={{listTransactions, addToList}}>
