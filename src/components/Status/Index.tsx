@@ -28,14 +28,14 @@ export function Status() {
 
   const data = [
     ["Task", "monthly transactions"],
-    ["Entradas", transactionCount(listTransactions, 'input')],
-    ["Saídas", transactionCount(listTransactions, 'output')],
-    ["Aportes", transactionCount(listTransactions, 'aports')],
-    ["Dividendos", transactionCount(listTransactions, 'dividends')], // CSS-style declaration
+    [`${transactionCount(listTransactions, 'input')} entradas`, transactionCount(listTransactions, 'input')],
+    [`${transactionCount(listTransactions, 'output')} saídas`, transactionCount(listTransactions, 'output')],
+    [`${transactionCount(listTransactions, 'aports')} aportes`, transactionCount(listTransactions, 'aports')],
+    [`${transactionCount(listTransactions, 'dividends')} dividendos`, transactionCount(listTransactions, 'dividends')], // CSS-style declaration
   ];
   
   const options = {
-    title: "Balanço Mensal",
+    title: ` Total de transações: ${listTransactions.length}`,
     pieHole: 0.4,
     is3D: true,
     backgroundColor: 'transparent',
@@ -46,7 +46,7 @@ export function Status() {
     titleTextStyle: {
       color: '#C4C4CC',
       fontName: 'Roboto',
-      fontSize: 16
+      fontSize: 14
     },
     colors:  ['#00875F', '#F75A68', '#C5A34A', '#5189A1'],
   };

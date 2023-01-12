@@ -87,6 +87,7 @@ export const StatusContent = styled.div`
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    flex-wrap: wrap;
   }
 
   .notFoundItems {

@@ -9,4 +9,5 @@ export const ContainerComponent= styled.main`
   gap: 2rem;
   justify-content: space-evenly;
   align-items: flex-start;
+  padding: 1rem;
 `
