@@ -20,12 +20,19 @@ export const SectionStatus = styled.section`
     border-bottom: 1px solid ${props => props.theme.colors.gray5};
     margin-bottom: 1rem;
   }
+
+  @media(max-width: 768px) {
+    width: 24rem;
+    height: 40rem;
+    padding: 1rem; 
+  }
 `
 export const StatusContent = styled.div`
   height: 86%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  justify-content: space-between;
 
   .formContent {
     display: flex;
@@ -97,6 +104,6 @@ export const StatusContent = styled.div`
 
 export const ChartComponent = styled(Chart)`
   width: 100%;
-  height: 20rem;
+  height: 100%;
   font-family: 'Roboto', sans-serif;
 `

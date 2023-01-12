@@ -9,7 +9,7 @@ interface TransactionsContextProps {
   addToList: (newState: TransactionProps) => void
 }
 
-interface TransactionProps {
+export interface TransactionProps {
   id: string
   created_at: Date
   description: string,

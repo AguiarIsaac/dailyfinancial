@@ -5,7 +5,7 @@ export function Header() {
   return (
     <HeaderComponent>
       <div className="logoContainer"></div>
-      <span className="title">Hashira</span>
+      {/* <span className="title">Hashira</span> */}
     </HeaderComponent>
   )
 }

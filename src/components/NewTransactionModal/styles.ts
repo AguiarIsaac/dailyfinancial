@@ -11,7 +11,7 @@ export const Overlay = styled(Dialog.Overlay)`
 `
 
 export const Content = styled(Dialog.Content)`
-  min-width: 32rem;
+  
   border-radius: 6px;
   padding: 2.5rem 3rem;
   background: ${props => props.theme.colors.baseCard};
@@ -57,6 +57,10 @@ export const Content = styled(Dialog.Content)`
         transition: background-color 0.2s;
       }
     }
+  }
+
+  @media(min-width: 768px) {
+    min-width: 32rem;
   }
 `
 

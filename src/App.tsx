@@ -17,7 +17,7 @@ export function App() {
   return (
     <TransactionsContextProvider>
       <ThemeProvider theme={changeTheme ? Dark : Light}>
-        <SwitchElement setChangeTheme={setChangeTheme} changeTheme={changeTheme}/>
+        {/* <SwitchElement setChangeTheme={setChangeTheme} changeTheme={changeTheme}/> */}
         <Header />
 
         <Container>

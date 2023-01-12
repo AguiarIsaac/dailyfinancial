@@ -3,25 +3,35 @@ import { Chart } from "react-google-charts";
 import { useContext } from "react";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
 import { SmileyWink, SmileyXEyes } from "phosphor-react";
+import { TransactionProps } from "../../contexts/TransactionsContext";
 
 export function Status() {
   const TransactionContext = useContext(TransactionsContext)
   const listTransactions = TransactionContext.listTransactions
-  console.log(listTransactions)
+  
+  function transactionCount( array: TransactionProps[], type: string) {
+    return array.filter(item => item.type == type ).length
+  }
 
-  const transactionCount = {
-    input: listTransactions.filter(item => item.type == 'input').length,
-    output: listTransactions.filter(item => item.type == 'output').length,
-    dividends: listTransactions.filter(item => item.type == 'dividends').length,
-    aports: listTransactions.filter(item => item.type == 'aports').length
+  function totalValueCalc (array: TransactionProps[], type: string) {
+    const filterTypeTransaction = array.filter(item => item.type == type)
+    
+    const filterValuesTransaction = filterTypeTransaction.map(item => {return item.value})
+    
+    const sumTransactions = filterValuesTransaction.reduce((accumulator: any, currentValue: any) => 
+    parseInt(accumulator)  + parseInt(currentValue), 0)
+
+    const valueFormated = new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(sumTransactions)
+
+    return valueFormated
   }
 
   const data = [
     ["Task", "monthly transactions"],
-    ["Entradas", transactionCount.input],
-    ["Saídas", transactionCount.output],
-    ["Aportes", transactionCount.aports],
-    ["Dividendos", transactionCount.dividends], // CSS-style declaration
+    ["Entradas", transactionCount(listTransactions, 'input')],
+    ["Saídas", transactionCount(listTransactions, 'output')],
+    ["Aportes", transactionCount(listTransactions, 'aports')],
+    ["Dividendos", transactionCount(listTransactions, 'dividends')], // CSS-style declaration
   ];
   
   const options = {
@@ -49,7 +59,7 @@ export function Status() {
       </header>
 
       <StatusContent>
-        <div className="formContent">
+        {/* <div className="formContent">
           <h2>Mês atual: Janeiro</h2>
 
           <form>
@@ -59,7 +69,7 @@ export function Status() {
               <button type="submit">Buscar</button>
             </div>
           </form>
-        </div>
+        </div> */}
         
         {listTransactions.length > 0 && <ChartComponent chartType="PieChart" data={data} options={options} /> }  
          
@@ -72,19 +82,19 @@ export function Status() {
 
         <div className="analitcs">
           <div className="line">
-            <p>Entradas: ;</p>
+            <p>Entradas: {totalValueCalc(listTransactions, 'input')} ;</p>
           </div>
 
           <div className="line">
-            <p>Saídas: ;</p>
+            <p>Saídas: {totalValueCalc(listTransactions, 'output')} ;</p>
           </div>
 
           <div className="line">
-            <p>Aportes:;</p>
+            <p>Aportes: {totalValueCalc(listTransactions, 'aports')};</p>
           </div>
 
           <div className="line">
-            <p>Dividendos: .</p>
+            <p>Dividendos: {totalValueCalc(listTransactions, 'dividends')}.</p>
           </div>
         </div>
       </StatusContent>
