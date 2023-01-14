@@ -11,11 +11,15 @@ export function NewTransactionModal() {
   const TransactionContext = useContext(TransactionsContext)
 
   function handleCreateNewTransaction(data: any) {
-    console.log(data)
+    
     const dataformated = {
       id: Math.floor(Date.now() * Math.random()).toString(36),
       created_at: new Date(),
-      ...data
+      description: data.description,
+      value: data.value,
+      category: data.category,
+      type: data.type,
+      dateOfTransaction: new Date(data.dateOfTransaction)
     }
 
     TransactionContext.addToList(dataformated)

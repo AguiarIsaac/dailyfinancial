@@ -32,7 +32,6 @@ export function TransactionsContextProvider({children}: ContextProps) {
     } else {
       setListTransactions([...listTransactions, TransactionEnvied])
     }
-    console.log(listTransactions)
   }
 
   useEffect(() => {

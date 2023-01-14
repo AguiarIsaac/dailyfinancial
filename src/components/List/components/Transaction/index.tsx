@@ -12,36 +12,22 @@ interface transactionProps {
   dateOfTransaction: Date
 }
 
-export function Transaction({id, description, type, value, category, created_at, dateOfTransaction}: transactionProps) {
+export function Transaction({id, description, type, value, dateOfTransaction, created_at}: transactionProps) {
   
   function verifyTransaction() {
     setOperationType(type)
   }
-  
-  function DateFormat(date: Date) {
-    const getDay = new Date(date).getDay()
-    const getMonth = new Date(date).getMonth() + 1
-    const year = new Date(date).getFullYear()
 
-    let day, month
-    
-    if(getDay < 10 ) {
-      day = `0${getDay}`
-    } else {
-      day = getDay
-    }
-
-    if(getMonth < 10 ) {
-      month = `0${getMonth}`
-    } else {
-      month = getDay
-    }
-
-    return `${day}/${month}/${year}`
+  function dataFormated(){
+    let data = new Date(dateOfTransaction),
+        dia  = (data.getDate()+1).toString().padStart(2, '0'),
+        mes  = (data.getMonth()+1).toString().padStart(2, '0'),
+        ano  = data.getFullYear();
+    return `${dia}/${mes}/${ano}`;
   }
-  
+
+
   const [operationType, setOperationType] = useState('')
-  const dateOfTransactionFormated = DateFormat(dateOfTransaction)
   const valueFormated = new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(value)
   
   useEffect(() =>{
@@ -72,7 +58,7 @@ export function Transaction({id, description, type, value, category, created_at,
     </div>
 
     <div className="line2">
-      <small>{dateOfTransactionFormated}</small>
+      <small>{dataFormated()}</small>
     </div>
   </TransactionComponent>
   )
