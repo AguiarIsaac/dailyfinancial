@@ -34,6 +34,10 @@ export const StatusContent = styled.div`
   gap: 2rem;
   justify-content: space-between;
 
+  h4 {
+    text-decoration: underline;
+  }
+
   .formContent {
     display: flex;
     justify-content: center;
@@ -99,6 +103,24 @@ export const StatusContent = styled.div`
     justify-content: center;
     gap: 1rem;
     text-align: center;
+  }
+
+  .calcs {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+
+    .calcsValues {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      div {
+        border-bottom: 2px solid ${props => props.theme.colors.gray5};
+        width: 100%;
+      }
+    }
   }
 `
 

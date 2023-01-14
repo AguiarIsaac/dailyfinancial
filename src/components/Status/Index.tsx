@@ -1,8 +1,7 @@
 import { ChartComponent, SectionStatus, StatusContent } from "./styles";
-import { Chart } from "react-google-charts";
 import { useContext } from "react";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
-import { SmileyWink, SmileyXEyes } from "phosphor-react";
+import { Minus, SmileyWink, SmileyXEyes } from "phosphor-react";
 import { TransactionProps } from "../../contexts/TransactionsContext";
 
 export function Status() {
@@ -21,9 +20,28 @@ export function Status() {
     const sumTransactions = filterValuesTransaction.reduce((accumulator: any, currentValue: any) => 
     parseInt(accumulator)  + parseInt(currentValue), 0)
 
-    const valueFormated = new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(sumTransactions)
+    const finalValue = {
+      formated: new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(sumTransactions),
+      unformated: sumTransactions
+    }
 
-    return valueFormated
+    return finalValue
+  }
+
+  function calcs() {
+    const inputs = totalValueCalc(listTransactions, 'input').unformated
+    const outputs = totalValueCalc(listTransactions, 'output').unformated + totalValueCalc(listTransactions, 'aports').unformated
+    
+    const subtraction = inputs - outputs
+
+    const subtractionFormated = new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(subtraction)
+
+    const results = {
+      resultSubtraction: subtractionFormated,
+      totalOfInputs: new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(outputs)
+    }
+
+    return results
   }
 
   const data = [
@@ -80,21 +98,32 @@ export function Status() {
           </div>
         }
 
+        <h4>Parcial de entradas e saídas:</h4>
+        <div className="calcs">
+          <span><Minus size={18}/></span>
+          <div className="calcsValues">
+            <span>{totalValueCalc(listTransactions, 'input').formated}</span>
+            <span>{calcs().totalOfInputs}</span>
+            <div></div>
+            <span>{calcs().resultSubtraction}</span>
+          </div>
+        </div>
+
         <div className="analitcs">
           <div className="line">
-            <p>Entradas: {totalValueCalc(listTransactions, 'input')} ;</p>
+            <p>Entradas: {totalValueCalc(listTransactions, 'input').formated} ;</p>
           </div>
 
           <div className="line">
-            <p>Saídas: {totalValueCalc(listTransactions, 'output')} ;</p>
+            <p>Saídas:{totalValueCalc(listTransactions, 'output').formated} ;</p>
           </div>
 
           <div className="line">
-            <p>Aportes: {totalValueCalc(listTransactions, 'aports')};</p>
+            <p>Aportes: {totalValueCalc(listTransactions, 'aports').formated};</p>
           </div>
 
           <div className="line">
-            <p>Dividendos: {totalValueCalc(listTransactions, 'dividends')}.</p>
+            <p>Dividendos: {totalValueCalc(listTransactions, 'dividends').formated}.</p>
           </div>
         </div>
       </StatusContent>
