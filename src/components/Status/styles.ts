@@ -2,19 +2,22 @@ import styled from "styled-components";
 import { Chart } from "react-google-charts";
 
 export const SectionStatus = styled.section`
-  width: 48rem;
+  /* width: 48rem;
   height: 40rem;
   padding: 1rem; 
 
   background: ${props => props.theme.colors.baseCard};
   border-radius: 6px;
 
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+
+  width: 75%;
 
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 4.5rem;
 
     padding: 1rem 0;
     border-bottom: 1px solid ${props => props.theme.colors.gray5};

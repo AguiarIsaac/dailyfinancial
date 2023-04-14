@@ -4,19 +4,13 @@ export const HeaderComponent = styled.header`
   max-width: 1400px;
   padding: 2rem;
   display: flex;
+
   align-items: center;
+  /* flex-direction: column; */
   justify-content: center;
-  flex-direction: column;
-  margin: 0 auto;
+  gap: 0.5rem;
 
-  div.logoContainer {
-    width: 6rem;
-    height: 6rem;
-    background: url(${props => props.theme.backgroundImg}) center center no-repeat;
-    background-size: cover;
-  }
-
-  span.title {
-    margin-top: -1rem;
+  img {
+    width: 80px;
   }
 `

@@ -1,11 +1,11 @@
-import { HeaderComponent } from "./styles";
-
+import { HeaderComponent } from "./styles"
+import paymentIcon from '../../assets/images/payment.webp'
 export function Header() {
 
   return (
     <HeaderComponent>
-      <div className="logoContainer"></div>
-      {/* <span className="title">Hashira</span> */}
+      <img src={paymentIcon} alt="calendario" />
+      <h1>Gerenciador Financeiro</h1>
     </HeaderComponent>
   )
 }

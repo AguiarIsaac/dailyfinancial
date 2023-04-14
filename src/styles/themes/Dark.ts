@@ -2,7 +2,7 @@ import logo from "../../assets/images/hashira-ligth.png"
 
 export default {
   colors: {
-    background: '#282828',
+    background: '#18191A',
     baseText: '#FFFFFF',
     baseCard: '#202024',
 

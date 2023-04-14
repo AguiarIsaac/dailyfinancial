@@ -7,23 +7,30 @@ import { CloseButton, Content, Item, Overlay, TransactionType } from './styles'
 
 export function NewTransactionModal() {
   
-  const {register, handleSubmit, control, reset } = useForm()
+  const {register, handleSubmit, control, reset, resetField, trigger } = useForm()
   const TransactionContext = useContext(TransactionsContext)
 
-  function handleCreateNewTransaction(data: any) {
+  async function handleCreateNewTransaction(data: any) {
     
-    const dataformated = {
-      id: Math.floor(Date.now() * Math.random()).toString(36),
-      created_at: new Date(),
-      description: data.description,
-      value: data.value,
-      category: data.category,
-      type: data.type,
-      dateOfTransaction: new Date(data.dateOfTransaction)
-    }
 
-    TransactionContext.addToList(dataformated)
-    reset()
+    const typeValidation = await trigger("type")
+
+    if(typeValidation) {
+
+      const dataformated = {
+        id: Math.floor(Date.now() * Math.random()).toString(36),
+        created_at: new Date(),
+        description: data.description,
+        value: data.value,
+        category: data.category,
+        type: data.type,
+        dateOfTransaction: new Date(data.dateOfTransaction)
+      }
+
+      TransactionContext.addToList(dataformated)
+      reset()
+      resetField(data.type)
+    }
   }
   
   return (
@@ -42,11 +49,13 @@ export function NewTransactionModal() {
           <input {...register('dateOfTransaction', {required: true}) } type="date" />
 
           <Controller 
+            rules={{ required: true }}
             control={control}
             name="type"
+            defaultValue=""
             render={( {field }) => {
               return (
-                <TransactionType onValueChange={field.onChange} value={field.value}>
+                <TransactionType onValueChange={field.onChange} value={field.value} >
                   <Item value="input" id="input">
                     <ArrowCircleUp size={18}/>
                     Entrada

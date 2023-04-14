@@ -73,11 +73,11 @@ export function Status() {
   return (
     <SectionStatus>
       <header>
-      <h1>Status financeiro</h1>
+        <h1>Status financeiro</h1>
       </header>
 
       <StatusContent>
-        {/* <div className="formContent">
+        <div className="formContent">
           <h2>Mês atual: Janeiro</h2>
 
           <form>
@@ -87,7 +87,7 @@ export function Status() {
               <button type="submit">Buscar</button>
             </div>
           </form>
-        </div> */}
+        </div>
         
         {listTransactions.length > 0 && <ChartComponent chartType="PieChart" data={data} options={options} /> }  
          
@@ -125,7 +125,13 @@ export function Status() {
           <div className="line">
             <p>Dividendos: {totalValueCalc(listTransactions, 'dividends').formated}.</p>
           </div>
+
+          <div>
+            <h4>Dados anuais</h4>
+            
         </div>
+        </div>
+
       </StatusContent>
     </SectionStatus>
   )
