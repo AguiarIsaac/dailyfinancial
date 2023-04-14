@@ -17,12 +17,11 @@ export function App() {
   return (
     <TransactionsContextProvider>
       <ThemeProvider theme={changeTheme ? Dark : Light}>
-        {/* <SwitchElement setChangeTheme={setChangeTheme} changeTheme={changeTheme}/> */}
         <Header />
 
         <Container>
-          <Status />
           <List />
+          <Status />
         </Container>
         <GlobalStyle />
       </ThemeProvider>
