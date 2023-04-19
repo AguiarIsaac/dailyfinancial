@@ -1,46 +1,14 @@
 import styled from "styled-components";
-import { Chart } from "react-google-charts";
 
 export const SectionStatus = styled.section`
-  /* width: 48rem;
-  height: 40rem;
-  padding: 1rem; 
-
-  background: ${props => props.theme.colors.baseCard};
-  border-radius: 6px;
-
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
-
-  width: 75%;
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 4.5rem;
-
-    padding: 1rem 0;
-    border-bottom: 1px solid ${props => props.theme.colors.gray5};
-    margin-bottom: 1rem;
-  }
-
-  @media(max-width: 768px) {
-    width: 24rem;
-    height: 40rem;
-    padding: 1rem; 
-  }
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+  height: 250px;
+  width: 100%;
+  background: ${props => props.theme.colors.backgroundCard};
+  border-radius: 4px 4px 0 0;
 `
 export const StatusContent = styled.div`
-  height: 86%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  justify-content: space-between;
-
-  h4 {
-    text-decoration: underline;
-  }
-
   .formContent {
     display: flex;
     justify-content: center;
@@ -55,8 +23,8 @@ export const StatusContent = styled.div`
       border-top-left-radius: 6px;
       border-bottom-left-radius: 6px;
       padding: 0.5rem;
-      background: ${props => props.theme.colors.gray1};
-      color: ${props => props.theme.colors.baseText};
+      background: ${props => props.theme.colors.backgroundCard};
+      color: ${props => props.theme.colors.titleText};
       font-family: 'Roboto', sans-serif;
       outline: none;
       cursor: pointer;
@@ -71,8 +39,8 @@ export const StatusContent = styled.div`
     button[type='submit'] {
       height: 25px;
       border: 0;
-      background: ${props => props.theme.colors.green};
-      color: ${props => props.theme.colors.baseText};
+      background: ${props => props.theme.colors.baseColor};
+      color: ${props => props.theme.colors.titleText};
       font-weight: bold;
       padding: 0 1.25rem;
       cursor: pointer;
@@ -83,7 +51,7 @@ export const StatusContent = styled.div`
         cursor: not-allowed;
       }
       &:not(:disabled):hover {
-        background: ${props => props.theme.colors.greenLigth};
+        background: ${props => props.theme.colors.baseColorHover};
         transition: background-color 0.2s;
       }
     }
@@ -118,18 +86,17 @@ export const StatusContent = styled.div`
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-
-      div {
-        border-bottom: 2px solid ${props => props.theme.colors.gray5};
-        width: 100%;
-      }
     }
   }
 `
 
-
-export const ChartComponent = styled(Chart)`
-  width: 100%;
-  height: 100%;
-  font-family: 'Roboto', sans-serif;
-`
+// .parent {
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   grid-template-rows: 1fr;
+//   grid-column-gap: 0px;
+//   grid-row-gap: 0px;
+//   }
+  
+//   .div1 { grid-area: 1 / 1 / 2 / 2; }
+//   .div2 { grid-area: 1 / 2 / 2 / 3; }

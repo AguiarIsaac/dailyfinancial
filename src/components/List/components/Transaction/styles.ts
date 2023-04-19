@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const TransactionComponent = styled.div`
 
-  background: #29292E;
+  background: ${props => props.theme.colors.backgroundCard};
   border-radius: 6px;
   padding: 0.25rem;
   display: flex;
@@ -23,36 +23,20 @@ export const TransactionComponent = styled.div`
     }
 
     span.valuePositive {
-      color: ${props => props.theme.colors.green}
+      color: ${props => props.theme.colors.inputColor}
     }
 
     span.valueNegative {
-      color: ${props => props.theme.colors.red}
+      color: ${props => props.theme.colors.outputColor}
     }
 
     span.valueDividends {
-      color: ${props => props.theme.colors.blue}
+      color: ${props => props.theme.colors.dividendColor}
     }
 
     span.valueAports {
-      color: ${props => props.theme.colors.yellow}
+      color: ${props => props.theme.colors.investmentColor}
     }
-
-    /* div.tags {
-      width: 8rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.25rem;
-
-      span.tag {
-        background: ${props => props.theme.colors.red};
-        border-radius: 9999px;
-        padding: 0 2px;
-        font-size: 11px;
-        min-width: 36px;
-        text-align: center;
-      }
-    } */
   }
 
   div.line2 {

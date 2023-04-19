@@ -2,13 +2,20 @@ import styled from "styled-components";
 
 export const HeaderComponent = styled.header`
   max-width: 1400px;
-  padding: 2rem;
+  height: 78.5px;
+  margin: 0 auto;
   display: flex;
-
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  text-align: center;
   align-items: center;
-  /* flex-direction: column; */
   justify-content: center;
   gap: 0.5rem;
+
+  h1 {
+    color: ${ props => props.theme.colors.titleText}
+  }
 
   img {
     width: 80px;

@@ -10,8 +10,9 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto', sans-serif;
     background: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.gray6};
+    color: ${props => props.theme.colors.text};
     -webkit-font-smoothing: antialiased;
+    overflow: hidden;
   }
 
   img {
@@ -19,10 +20,4 @@ export const GlobalStyle = createGlobalStyle`
     height: auto;
     object-fit: cover;
   }
-
-  /* @media(max-width: 768px) {
-    body {
-      font-size: 18px;
-    }
-  } */
 `

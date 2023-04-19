@@ -14,7 +14,7 @@ export const Content = styled(Dialog.Content)`
   
   border-radius: 6px;
   padding: 2.5rem 3rem;
-  background: ${props => props.theme.colors.baseCard};
+  background: ${props => props.theme.colors.backgroundModal};
   position: fixed;
   top: 50%;
   left: 50%;
@@ -29,20 +29,20 @@ export const Content = styled(Dialog.Content)`
     input {
       border-radius: 6px;
       border: 0;
-      background: ${props => props.theme.colors.gray1};
-      color: ${props => props.theme.colors.baseText};
+      background: ${props => props.theme.colors.backgroundCard};
+      color: ${props => props.theme.colors.titleText};
       padding: 1rem;
       &:focus-visible {
         outline: none;
-        border: 1px solid ${props => props.theme.colors.green};
-        color: ${props => props.theme.colors.baseText};
+        border: 1px solid ${props => props.theme.colors.baseColor};
+        color: ${props => props.theme.colors.titleText};
       }
     }
     button[type='submit'] {
       height: 50px;
       border: 0;
-      background: ${props => props.theme.colors.green};
-      color: ${props => props.theme.colors.baseText};
+      background: ${props => props.theme.colors.baseColor};
+      color: ${props => props.theme.colors.titleText};
       font-weight: bold;
       padding: 0 1.25rem;
       border-radius: 6px;
@@ -53,7 +53,7 @@ export const Content = styled(Dialog.Content)`
         cursor: not-allowed;
       }
       &:not(:disabled):hover {
-        background: ${props => props.theme.colors.greenLigth};
+        background: ${props => props.theme.colors.baseColorHover};
         transition: background-color 0.2s;
       }
     }
@@ -72,7 +72,7 @@ export const CloseButton = styled(Dialog.Close)`
   right: 1.5rem;
   line-height: 0; 
   cursor: pointer;
-  color: ${props => props.theme.colors.gray5}
+  color: ${props => props.theme.colors.outputColor}
 `
 
 export const TransactionType = styled(RadioGroup.Root)`
@@ -93,58 +93,58 @@ export const Item = styled(RadioGroup.Item)`
   border: 0;
 
   &#input svg {
-    color: ${props => props.theme.colors.green};
+    color: ${props => props.theme.colors.inputColor};
   }
 
   &#output svg {
-    color: ${props => props.theme.colors.red};
+    color: ${props => props.theme.colors.outputColor};
   }
 
   &#dividends svg {
-    color: ${props => props.theme.colors.blue};
+    color: ${props => props.theme.colors.dividendColor};
   }
 
   &#aports svg {
-    color: ${props => props.theme.colors.yellow};
+    color: ${props => props.theme.colors.investmentColor};
   }
 
-  background: ${props => props.theme.colors.gray3};
-  color: ${props => props.theme.colors.gray6};
+  background: ${props => props.theme.colors.backgroundCard};
+  color: ${props => props.theme.colors.titleText};
 
   &[data-state='unchecked']:hover {
     transition: background-color 0.2s;
-    background: ${props => props.theme.colors.gray4};
+    background: ${props => props.theme.colors.background};
   }
 
   &[data-state='checked']#input {
-    color: ${props => props.theme.colors.baseText};
-    background: ${props => props.theme.colors.green};
+    color: ${props => props.theme.colors.titleText};
+    background: ${props => props.theme.colors.inputColor};
     svg {
-      color: ${props => props.theme.colors.baseText};
+      color: ${props => props.theme.colors.titleText};
     }
   }
 
   &[data-state='checked']#output {
-    color: ${props => props.theme.colors.baseText};
-    background: ${props => props.theme.colors.red};
+    color: ${props => props.theme.colors.titleText};
+    background: ${props => props.theme.colors.outputColor};
     svg {
-      color: ${props => props.theme.colors.baseText};
+      color: ${props => props.theme.colors.titleText};
     }
   }
 
   &[data-state='checked']#dividends {
-    color: ${props => props.theme.colors.baseText};
-    background: ${props => props.theme.colors.blue};
+    color: ${props => props.theme.colors.titleText};
+    background: ${props => props.theme.colors.dividendColor};
     svg {
-      color: ${props => props.theme.colors.baseText};
+      color: ${props => props.theme.colors.titleText};
     }
   }
 
   &[data-state='checked']#aports {
-    color: ${props => props.theme.colors.gray4};
-    background: ${props => props.theme.colors.yellow};
+    color: ${props => props.theme.colors.titleText};
+    background: ${props => props.theme.colors.investmentColor};
     svg {
-      color: ${props => props.theme.colors.gray4};
+      color: ${props => props.theme.colors.titleText};
     }
   }
 `

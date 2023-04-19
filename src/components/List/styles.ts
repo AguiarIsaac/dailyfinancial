@@ -1,24 +1,18 @@
 import styled from "styled-components";
 
 export const SectionList = styled.section`
-  /* width: 24rem;
-  height: 40rem;
-  padding: 1rem; 
-
-  background: ${props => props.theme.colors.baseCard};
-  border-radius: 6px;
-
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
-
-  width: 25%;
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 1;
+  width: 100%;
+  min-width: 18rem;
+  height: 400px;
 
   header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 
-    padding: 1rem 0;
-    border-bottom: 1px solid ${props => props.theme.colors.gray5};
+    border-bottom: 1px solid ${props => props.theme.colors.text};
     margin-bottom: 1rem;
     min-height: 4.5rem;
   }
@@ -27,15 +21,15 @@ export const SectionList = styled.section`
   button {
     height: 2rem;
     border: 0;
-    background: ${props => props.theme.colors.green};
+    background: ${props => props.theme.colors.baseColor};
     border-radius: 4px;
     padding: 0.25rem;
-    color: ${props => props.theme.colors.baseText};
+    color: ${props => props.theme.colors.titleText};
     cursor: pointer;
     font-weight: bold;
 
     &:hover {
-      background: ${props => props.theme.colors.greenLigth};
+      background: ${props => props.theme.colors.baseColorHover};
       transition: background-color 0.2s;
     }
   }
@@ -45,9 +39,10 @@ export const ListTransactions = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-top: 2rem;
 
   overflow-y: scroll;
-  height: 82%;
+  height: 400px;
 
   
   ::-webkit-scrollbar {
@@ -62,7 +57,7 @@ export const ListTransactions = styled.div`
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: ${props => props.theme.colors.gray5};
+    background-color: ${props => props.theme.colors.text};
     border-radius: 8px;
     border: none;
   }

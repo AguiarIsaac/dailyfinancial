@@ -3,14 +3,12 @@ import styled from "styled-components";
 export const ContainerComponent= styled.main`
   max-width: 1400px;
   width: 90%;
+  height: 500px;
   margin: 0 auto;
-  padding: 1rem;
-  margin-bottom: 2rem;
-
-  background: ${props => props.theme.colors.baseCard};
-  border-radius: 6px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
-  display: flex;
-  gap: 0.5rem;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 2.8fr 4.2fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 0.25rem;
 `

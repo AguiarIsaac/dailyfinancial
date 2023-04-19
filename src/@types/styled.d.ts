@@ -3,22 +3,18 @@ import 'styled-components'
 declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
-      background: string,
-      baseText: string,
-      baseCard: string,
-  
-      gray1: string,
-      gray3: string,
-      gray4: string,
-      gray5: string,
-      gray6: string,
-      green: string,
-      greenLigth: string,
-      greenDark: string,
-      red: string,
-      redDark:string,
-      yellow: string,
-      blue: string
+    baseColor: string,
+    baseColorHover: string,
+    background: string,
+    backgroundCard: string,
+    backgroundModal: string,
+    titleText: string,
+    text: string,
+
+    inputColor: string,
+    outputColor: string,
+    investmentColor: string,
+    dividendColor: string,
     },
 
     backgroundImg: string

@@ -4,11 +4,11 @@ import { Container } from './components/Container'
 import { TransactionsContextProvider } from './contexts/TransactionsContext'
 import { Header } from './components/Header'
 import { List } from './components/List/indext'
-import { SwitchElement } from './components/Switch'
 import { GlobalStyle } from './styles/globalstyle'
 import Dark from './styles/themes/Dark'
 import Light from './styles/themes/Light'
-import { Status } from './components/Status/Index'
+import { MonthlyBalance } from './components/MonthlyBalance/Index'
+import { AnnualBalance } from './components/AnnualBalance'
 
 export function App() {
 
@@ -21,7 +21,8 @@ export function App() {
 
         <Container>
           <List />
-          <Status />
+          <MonthlyBalance />
+          <AnnualBalance />
         </Container>
         <GlobalStyle />
       </ThemeProvider>
