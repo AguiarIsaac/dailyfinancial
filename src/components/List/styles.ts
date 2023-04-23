@@ -15,6 +15,7 @@ export const SectionList = styled.section`
     border-bottom: 1px solid ${props => props.theme.colors.text};
     margin-bottom: 1rem;
     min-height: 4.5rem;
+    color: ${props => props.theme.colors.titleText};
   }
 
 

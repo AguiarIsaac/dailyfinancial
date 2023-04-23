@@ -6,7 +6,7 @@ export const HeaderComponent = styled.header`
   margin: 0 auto;
   display: flex;
   margin-top: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
   text-align: center;
   align-items: center;

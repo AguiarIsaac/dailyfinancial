@@ -7,7 +7,7 @@ export default {
     background: 'rgb(0, 0, 0)',
     backgroundCard: 'rgb(10, 10, 10)',
     backgroundModal: 'rgb(18,18,20)',
-    titleText:' rgb(255,255,255)',
+    titleText:'rgb(255,255,255)',
     text:'rgb(122,122,122)',
 
     inputColor: 'rgb(0,176,124)',

@@ -9,6 +9,7 @@ import Dark from './styles/themes/Dark'
 import Light from './styles/themes/Light'
 import { MonthlyBalance } from './components/MonthlyBalance/Index'
 import { AnnualBalance } from './components/AnnualBalance'
+import { FooterElement } from './components/FooterElement'
 
 export function App() {
 
@@ -24,6 +25,8 @@ export function App() {
           <MonthlyBalance />
           <AnnualBalance />
         </Container>
+
+        <FooterElement />
         <GlobalStyle />
       </ThemeProvider>
     </TransactionsContextProvider>

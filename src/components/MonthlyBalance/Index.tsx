@@ -45,11 +45,15 @@ export function MonthlyBalance() {
   //   return results
   // }
 
-  const series = [44, 55, 41, 17, 15]
+  const series = [43, 55, 41, 100]
   const options = {
+    colors: ['rgb(0,176,124)', 'rgb(255, 105, 118)', 'rgb(197, 163, 74)', 'rgb(0, 128, 148)'],
+    labels: ['Entradas', 'Saídas', 'Aportes', 'Dividendos'],
     chart: {
       type: 'donut',
-    }
+      foreColor: 'rgb(255,255,255)'
+    },
+    
   }
 
   return (

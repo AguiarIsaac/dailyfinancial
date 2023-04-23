@@ -19,9 +19,11 @@ const series = {
 }
 
 const options = {
+  colors: ['rgb(0,176,124)', 'rgb(255, 105, 118)', 'rgb(197, 163, 74)', 'rgb(0, 128, 148)'],
   chart: {
     type: 'bar',
-    height: 350
+    height: 350,
+    foreColor: 'rgb(255,255,255)'
   },
   plotOptions: {
     bar: {
