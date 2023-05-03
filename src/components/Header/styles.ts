@@ -5,7 +5,7 @@ export const HeaderComponent = styled.header`
   height: 78.5px;
   margin: 0 auto;
   display: flex;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
   flex-wrap: wrap;
   text-align: center;

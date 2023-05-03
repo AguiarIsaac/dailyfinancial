@@ -24,9 +24,9 @@ export function NewTransactionModal() {
         value: data.value,
         category: data.category,
         type: data.type,
-        dateOfTransaction: new Date(data.dateOfTransaction)
+        dateOfTransaction: data.dateOfTransaction
       }
-
+      
       TransactionContext.addToList(dataformated)
       reset()
       resetField(data.type)

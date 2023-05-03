@@ -54,7 +54,8 @@ const options = {
   tooltip: {
     y: {
       formatter: function (val: any) {
-        const values = `R$ ${val}`
+        const valueformated = val.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+        const values = valueformated
 
         return values
       }

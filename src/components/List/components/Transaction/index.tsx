@@ -1,6 +1,6 @@
 import { ArrowCircleDown, ArrowCircleUp, Bank, CurrencyCircleDollar } from "phosphor-react";
 import { useEffect, useState } from "react";
-import { TransactionComponent } from "./styles";
+import { TransactionComponent } from "./styles"
 
 interface transactionProps {
   id: string
@@ -19,11 +19,12 @@ export function Transaction({id, description, type, value, dateOfTransaction, cr
   }
 
   function dataFormated(){
-    let data = new Date(dateOfTransaction),
-        dia  = (data.getDate()+1).toString().padStart(2, '0'),
-        mes  = (data.getMonth()+1).toString().padStart(2, '0'),
-        ano  = data.getFullYear();
-    return `${dia}/${mes}/${ano}`;
+    const date = new Date(dateOfTransaction + 'T00:00:00-03:00')
+
+    const day = date.getDate().toString().padStart(2, '0')
+    const month = (date.getMonth() + 1).toString().padStart(2, '0')
+    const year = date.getFullYear().toString()
+    return `${day == '00' ? '01': day}/${month}/${year}`
   }
 
 

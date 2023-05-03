@@ -4,11 +4,6 @@ interface ContextProps {
   children: ReactNode
 }
 
-interface TransactionsContextProps {
-  listTransactions: TransactionProps[],
-  addToList: (newState: TransactionProps) => void
-}
-
 export interface TransactionProps {
   id: string
   created_at: Date
@@ -19,6 +14,10 @@ export interface TransactionProps {
   dateOfTransaction: Date
 }
 
+interface TransactionsContextProps {
+  listTransactions: TransactionProps[],
+  addToList: (newState: TransactionProps) => void
+}
 
 export const TransactionsContext = createContext({} as TransactionsContextProps)
 
