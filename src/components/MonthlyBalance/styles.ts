@@ -136,6 +136,17 @@ export const InfoElement = styled.div`
   }
 
   .periodo {
+
+    h4 {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    form {
+      div {
+        display: flex;
+      }
+    }
     input[type="month"] {
       border: none;
       height: 25px;
@@ -160,7 +171,7 @@ export const InfoElement = styled.div`
       background: ${props => props.theme.colors.baseColor};
       color: ${props => props.theme.colors.titleText};
       font-weight: bold;
-      padding: 0 1.25rem;
+      padding: 0 0.5rem;
       cursor: pointer;
       border-top-right-radius: 6px;
       border-bottom-right-radius: 6px;

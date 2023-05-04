@@ -4,6 +4,7 @@ import { TransactionsContext } from "../../contexts/TransactionsContext";
 import { TransactionProps } from "../../contexts/TransactionsContext";
 import ReactApexChart from "react-apexcharts";
 import { useForm } from "react-hook-form";
+import { ArrowRight } from "@phosphor-icons/react";
 
 export function MonthlyBalance() {
   const { register, handleSubmit } = useForm()
@@ -92,12 +93,17 @@ export function MonthlyBalance() {
       <InfoElement>
         <div className="periodo">
           <form onSubmit={handleSubmit(handleGetMonth)}>
-            <h4>Resumo de periodo: {months[new Date(period).getMonth()]}</h4>
-            <input
-              {...register('month', {required: true})}  
-              type="month"
-              name="month" id="month" />
-            <button type="submit">verificar</button>
+            <h4>Periodo: {months[new Date(period).getMonth()]}</h4>
+
+            <div>
+              <input
+                {...register('month', {required: true})}  
+                type="month"
+                name="month" id="month" />
+              <button type="submit">
+                <ArrowRight size={16} />
+              </button>
+            </div>
           </form>
         </div>
         <div className="resumo">
