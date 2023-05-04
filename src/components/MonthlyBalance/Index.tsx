@@ -18,13 +18,7 @@ export function MonthlyBalance() {
     // retorna o numrero do mes seleciconado no form
     const dateSepared = data.month.split('-')
     const monthSelected = Number(dateSepared[1])
-
-    //retorna o numero do mes de todas as transacoes
-    const list = listTransactions.map(transaction => {
-      const month = new Date(transaction.dateOfTransaction).getUTCMonth()
-      return month + 1
-    })
-
+    
     const listFiltreds = listTransactions.filter(transaction => {
       const month = new Date(transaction.dateOfTransaction).getUTCMonth()
       const monsthFormated = month + 1
@@ -34,10 +28,9 @@ export function MonthlyBalance() {
       }
     })
 
+    setPeriod(months[monthSelected - 1])
+
     setListFilteredByMonth(listFiltreds)
-    // console.log(listFiltreds)
-    // Aqui ele filtra os meses 
-    // console.log(list.filter(month => month === monthSelected))
   }
 
   function totalValueCalc (array: TransactionProps[], type: string) {
@@ -82,8 +75,10 @@ export function MonthlyBalance() {
 
   useEffect(() => {
     const timeElapsed = Date.now()
-    const currentDate = new Date(timeElapsed)
-    setPeriod(currentDate)
+    const currentDate = new Date(timeElapsed).getMonth()
+    setPeriod(months[currentDate])
+
+    // está pendente resolver a questão de trazer o mes atual no automatico
   },[])
   
   return (
@@ -93,7 +88,7 @@ export function MonthlyBalance() {
       <InfoElement>
         <div className="periodo">
           <form onSubmit={handleSubmit(handleGetMonth)}>
-            <h4>Periodo: {months[new Date(period).getMonth()]}</h4>
+            <h4>Periodo: {period}</h4>
 
             <div>
               <input
