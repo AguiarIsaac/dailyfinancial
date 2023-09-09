@@ -7,7 +7,7 @@
 * Gerenciador financeiro onde é possivel registrar e acompanhar todas as transações realizadas.
 
 ## ❕Status do projeto
-<img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20ANALISE&color=GREEN&style=for-the-badge"/>
+![Status](https://img.shields.io/badge/Status-Em%20an%C3%A1lise-FF8C00?style=for-the-badge)
 
 ### 🛠️ Features a serem implementadas
 * Em análise...
